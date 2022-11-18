@@ -44,7 +44,7 @@ export const SimpleForm = () => {
                     name='email'
                     className='form-control'
                     autoComplete='off'
-                    placeholder='email@email.com'
+                    placeholder='email@gmail.com'
                     value={emial}
                     onChange={handleInputChange}
                 />
