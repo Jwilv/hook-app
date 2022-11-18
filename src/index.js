@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 //import { CounterApp } from './components/01-usestate/CounterApp';
-import { CounterWithCoustomHook } from './components/01-usestate/CounterWithCoustomHook';
+//import { CounterWithCoustomHook } from './components/01-usestate/CounterWithCoustomHook';
+import { SimpleForm } from './components/02-useEffect/SimpleForm';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  <CounterWithCoustomHook />
+  <SimpleForm />
 
 );
 
