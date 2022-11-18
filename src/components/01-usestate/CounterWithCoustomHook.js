@@ -1,15 +1,17 @@
 
 import React from 'react'
+import { useCounter } from '../../hooks/useCounter'
 import './counterApp.css'
 
 export const CounterWithCoustomHook = () => {
+    const {state:counter,decrement,increment} = useCounter(100);
     return (
         <>
-            <h1>Counter With Coustom Hook: {0}</h1>
+            <h1>Counter With Coustom Hook: {counter}</h1>
             <hr/>
             
-            <button className='btn btn-primary'>+1</button>
-            <button className='btn btn-primary'>-1</button>
+            <button onClick={ () => increment(1) } className='btn btn-primary'>+1</button>
+            <button onClick={ () => decrement(1) } className='btn btn-primary'>-1</button>
         </>
     )
 }
