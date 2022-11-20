@@ -1,48 +1,51 @@
-import React, {  useState } from 'react'
+import React from 'react'
+import { useForm } from '../../hooks/useForm'
+import './efects.css'
 
 export const FormWithCustomHook = () => {
 
-    const [stateForm, setStateForm] = useState({
-        emial: '',
+    const { values, handleInputChanget } = useForm({
+        email: '',
         name: '',
-    })
+    });
 
-    const { emial, name } = stateForm
+    const { emial, name, password } = values
 
-    const handleInputChange = ({ target }) => {
-        setStateForm({
-            ...stateForm,
-            [target.name]: target.value
-        })
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        console.log(values)
     }
 
 
     return (
         <>
-            <h1>FormWithCustomHook</h1>
-            <hr />
-            <div className='form-group'>
-                <input
-                    type='text'
-                    name='name'
-                    className='form-control'
-                    autoComplete='off'
-                    placeholder='tu nombre'
-                    value={name}
-                    onChange={handleInputChange}
-                />
-            </div>
-            <div className='form-group'>
-                <input
-                    type='text'
-                    name='email'
-                    className='form-control'
-                    autoComplete='off'
-                    placeholder='email@gmail.com'
-                    value={emial}
-                    onChange={handleInputChange}
-                />
-            </div>
+            <form onSubmit={handleSubmit}>
+                <h1>FormWithCustomHook</h1>
+                <hr />
+                <div className='form-group'>
+                    <input
+                        type='text'
+                        name='name'
+                        className='form-control'
+                        autoComplete='off'
+                        placeholder='tu nombre'
+                        value={name}
+                        onChange={handleInputChanget}
+                    />
+                </div>
+                <div className='form-group'>
+                    <input
+                        type='text'
+                        name='email'
+                        className='form-control'
+                        autoComplete='off'
+                        placeholder='email@gmail.com'
+                        value={emial}
+                        onChange={handleInputChanget}
+                    />
+                </div>
+                <button type='submit' className='btn btn-primary'>guardar</button>
+            </form>
         </>
     )
 }
