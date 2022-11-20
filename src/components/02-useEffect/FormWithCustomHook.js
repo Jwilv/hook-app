@@ -9,7 +9,7 @@ export const FormWithCustomHook = () => {
         name: '',
     });
 
-    const { emial, name, password } = values
+    const { emial, name } = values
 
     const handleSubmit = (e)=>{
         e.preventDefault();
