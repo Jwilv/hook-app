@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { MemoHook } from './components/06-memos/MemoHook';
+import { CallBackHook } from './components/06-memos/CallBackHook';
+//import { MemoHook } from './components/06-memos/MemoHook';
 //import { FormWithCustomHook } from './components/02-useEffect/FormWithCustomHook';
 //import { MultipleCustomHooks } from './components/03-example/MultipleCustomHooks';
 //import { FocusScreen } from './components/04-useRef/FocusScreen';
@@ -16,7 +17,7 @@ import { MemoHook } from './components/06-memos/MemoHook';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  <MemoHook />
+  <CallBackHook />
 
 );
 
