@@ -1,0 +1,13 @@
+body{
+    padding: 70px;
+}
+input{
+    margin: 25px;
+}
+p{
+    margin: 7px;
+}
+
+.blockquote{
+    display: flex;
+}

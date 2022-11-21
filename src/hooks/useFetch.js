@@ -18,7 +18,7 @@ export const useFetch = (url) => {
 
         setState({ data: null, loading: true, error: null, })
 
-        setTimeout( ()=>{
+        
             fetch(url)
             .then(resp => resp.json())
             .then(data => {
@@ -28,10 +28,8 @@ export const useFetch = (url) => {
                         error: null,
                         data
                     })
-                }
-
+                } 
             })
-        }, 2000)
     }, [url]);
 
     return state;
