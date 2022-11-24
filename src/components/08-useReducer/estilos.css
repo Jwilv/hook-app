@@ -1,3 +1,18 @@
 body{
     padding: 70px;
 }
+
+.list-group-item{
+    align-items: stretch;
+    display: flex;
+    justify-content:space-between;
+}
+
+p{
+    margin: 0;
+    cursor: pointer;
+}
+
+.complete{
+    text-decoration: line-through;
+}
