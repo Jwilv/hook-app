@@ -14,6 +14,21 @@ export const TodoApp = () => {
 
     console.log(todos)
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        
+        const newTodo = {
+            id: new Date().getTime(),
+            desc: 'Aprender React',
+            done: false,
+        }
+
+        const action ={
+            type : 'add',
+            payload : newTodo,
+        }
+    }
+
     return (
         <>
             <h1>TodoApp ({todos.length})</h1>
@@ -47,7 +62,7 @@ export const TodoApp = () => {
                     <h4>Agregar todo</h4>
                     <hr />
 
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <input
                             type='text'
                             name='description'
@@ -55,12 +70,14 @@ export const TodoApp = () => {
                             autoComplete='off'
                             className='form-control'
                         />
+                        <button
+                            type='submit'
+                            className='btn btn-block btn-outline-primary mt-1 btn-block'
+                        >
+                            agreagar
+                        </button>
                     </form>
-                    <button
-                        className='btn btn-block btn-outline-primary mt-1 btn-block'
-                    >
-                        agreagar
-                    </button>
+
                 </div>
 
             </div>
