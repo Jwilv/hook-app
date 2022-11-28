@@ -10,16 +10,16 @@ export const TodoApp = () => {
         done: false,
     }]
 
-    const [todos] = useReducer(todoReducer, initialSate)
+    const [todos, dispatchTodo] = useReducer(todoReducer, initialSate)
 
     console.log(todos)
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        
+
         const newTodo = {
             id: new Date().getTime(),
-            desc: 'Aprender React',
+            desc: 'nueva tarea',
             done: false,
         }
 
@@ -27,6 +27,8 @@ export const TodoApp = () => {
             type : 'add',
             payload : newTodo,
         }
+
+        dispatchTodo(action);
     }
 
     return (
