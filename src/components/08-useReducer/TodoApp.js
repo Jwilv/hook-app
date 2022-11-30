@@ -6,11 +6,14 @@ import { todoReducer } from './todoReducer'
 export const TodoApp = () => {
 
     const init = ()=> {
-        return [{
-        id: new Date().getTime(),
-        desc: 'Aprender React',
-        done: false,
-    }]}
+        return JSON.parse(localStorage.getItem('todos')) || []
+    }
+    //{
+    //     return [{
+    //     id: new Date().getTime(),
+    //     desc: 'Aprender React',
+    //     done: false,
+    // }]}
 
     const [todos, dispatchTodo] = useReducer(todoReducer, []  ,init)
 
@@ -91,7 +94,7 @@ export const TodoApp = () => {
                             type='submit'
                             className='btn btn-block btn-outline-primary mt-1 btn-block'
                         >
-                            agreagar
+                            agregar
                         </button>
                     </form>
 
