@@ -8,12 +8,6 @@ export const TodoApp = () => {
     const init = ()=> {
         return JSON.parse(localStorage.getItem('todos')) || []
     }
-    //{
-    //     return [{
-    //     id: new Date().getTime(),
-    //     desc: 'Aprender React',
-    //     done: false,
-    // }]}
 
     const [todos, dispatchTodo] = useReducer(todoReducer, []  ,init)
 
@@ -25,7 +19,16 @@ export const TodoApp = () => {
         localStorage.setItem('todos', JSON.stringify(todos))
     },[todos])
 
-    console.log(todos)
+    const handleDelete = (id)=>{
+
+        const action = {
+            type:'delete',
+            payload: id
+        }
+
+        dispatchTodo(action)
+    }
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -49,7 +52,7 @@ export const TodoApp = () => {
 
     return (
         <>
-            <h1>TodoApp ({todos.length})</h1>
+            <h1>Tareas ({todos.length})</h1>
             <hr />
 
             <div className='row'>
@@ -66,8 +69,9 @@ export const TodoApp = () => {
                                     <p className='text-center'>{i + 1}. {todos.desc}</p>
                                     <button
                                         className='btn btn-danger'
+                                        onClick={ () =>handleDelete(todos.id) }
                                     >
-                                        borrar
+                                        Borrar
                                     </button>
                                 </li>
                             ))
@@ -77,14 +81,12 @@ export const TodoApp = () => {
                 </div>
 
                 <div className='col-5'>
-                    <h4>Agregar todo</h4>
-                    <hr />
 
                     <form onSubmit={handleSubmit}>
                         <input
                             type='text'
                             name='description'
-                            placeholder='aprender ...'
+                            placeholder='Incluir...'
                             autoComplete='off'
                             className='form-control'
                             value={description}
@@ -94,7 +96,7 @@ export const TodoApp = () => {
                             type='submit'
                             className='btn btn-block btn-outline-primary mt-1 btn-block'
                         >
-                            agregar
+                            Agregar
                         </button>
                     </form>
 
