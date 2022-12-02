@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 //import { CallBackHook } from './components/06-memos/CallBackHook';
 //import { Padre } from './components/07-tarea-memo/Padre';
-import { TodoApp } from './components/08-useReducer/TodoApp';
+//import { TodoApp } from './components/08-useReducer/TodoApp';
+import { MainApp } from './components/09-useContext/MainApp';
+import { BrowserRouter } from 'react-router-dom'
 //import { MemoHook } from './components/06-memos/MemoHook';
 //import { FormWithCustomHook } from './components/02-useEffect/FormWithCustomHook';
 //import { MultipleCustomHooks } from './components/03-example/MultipleCustomHooks';
@@ -18,8 +20,10 @@ import { TodoApp } from './components/08-useReducer/TodoApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
-  <TodoApp />
+  <BrowserRouter>
+    <MainApp />
+  </BrowserRouter>
+  //<MainApp />
 
 );
 
