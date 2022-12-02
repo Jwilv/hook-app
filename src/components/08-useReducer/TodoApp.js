@@ -5,35 +5,42 @@ import { todoReducer } from './todoReducer'
 
 export const TodoApp = () => {
 
-    const init = ()=> {
+    const init = () => {
         return JSON.parse(localStorage.getItem('todos')) || []
     }
 
-    const [todos, dispatchTodo] = useReducer(todoReducer, []  ,init)
+    const [todos, dispatchTodo] = useReducer(todoReducer, [], init)
 
-    const [{ description }, handleInputChanGet,reset] = useForm({
+    const [{ description }, handleInputChanGet, reset] = useForm({
         description: ''
     })
 
-    useEffect( ()=>{
+    useEffect(() => {
         localStorage.setItem('todos', JSON.stringify(todos))
-    },[todos])
+    }, [todos])
 
-    const handleDelete = (id)=>{
+    const handleDelete = (id) => {
 
         const action = {
-            type:'delete',
+            type: 'delete',
             payload: id
         }
 
         dispatchTodo(action)
     }
 
+    const handleToggle = (id)=>{
+        dispatchTodo({
+            type: 'toggle',
+            payload: id
+        })
+    }
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        if(description.trim().length <= 1) return;
+        if (description.trim().length <= 1) return;
 
         const newTodo = {
             id: new Date().getTime(),
@@ -66,10 +73,15 @@ export const TodoApp = () => {
                                     key={todos.id}
                                     className='list-group-item'
                                 >
-                                    <p className='text-center'>{i + 1}. {todos.desc}</p>
+                                    <p 
+                                    className={`${ todos.done && 'complete'}`}
+                                    onClick={() => handleToggle(todos.id)}
+                                    >
+                                        {i + 1}. {todos.desc}
+                                    </p>
                                     <button
                                         className='btn btn-danger'
-                                        onClick={ () =>handleDelete(todos.id) }
+                                        onClick={() => handleDelete(todos.id)}
                                     >
                                         Borrar
                                     </button>

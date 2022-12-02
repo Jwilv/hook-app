@@ -11,6 +11,7 @@ body{
 p{
     margin: 0;
     cursor: pointer;
+    user-select: none;
 }
 
 .complete{
