@@ -42,7 +42,7 @@ describe('Pruebas en el Hook useCounter ', () => {
 
         expect(value).toBe(valorEsperado)
     });
-    
+
     test('debe de ejecutar las funciones de la manera esperada ( decrement )', () => {
 
         const valorInicial = 100;
@@ -73,8 +73,6 @@ describe('Pruebas en el Hook useCounter ', () => {
 
         act(() => {
             increment();
-        })
-        act(() => {
             reset();
         })
 
