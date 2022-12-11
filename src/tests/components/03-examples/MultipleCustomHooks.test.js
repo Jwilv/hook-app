@@ -6,16 +6,24 @@ jest.mock('../../../hooks/useFetch')
 
 
 
-describe('pruebas en <MultipleCustomHooks /> ', () => { 
+describe('pruebas en <MultipleCustomHooks /> ', () => {
 
     test('debe de renderizarse correctamente ', () => {
 
         useFetch.mockReturnValue({
-            data:null,
-            loading:true,
-            error:null,
+            data: null,
+            loading: true,
+            error: null,
         })
         const wrapper = shallow(<MultipleCustomHooks />)
         expect(wrapper).toMatchSnapshot();
     });
- })
+
+    test('', () => {
+        useFetch.mockReturnValue({
+            data: null,
+            loading: true,
+            error: null,
+        })
+    });
+})
