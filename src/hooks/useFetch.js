@@ -18,17 +18,24 @@ export const useFetch = (url) => {
 
         setState({ data: null, loading: true, error: null, })
 
-        
-            fetch(url)
+
+        fetch(url)
             .then(resp => resp.json())
             .then(data => {
                 if (isMonted.current) {
                     setState({
                         loading: false,
                         error: null,
-                        data
+                        data: [data],
                     })
-                } 
+                }
+            })
+            .catch(() => {
+                setState({
+                    data: null,
+                    loading: true,
+                    error: 'no se pudo cargar',
+                })
             })
     }, [url]);
 
