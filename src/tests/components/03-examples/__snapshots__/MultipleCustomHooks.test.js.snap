@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pruebas en <MultipleCustomHooks />  debe de renderizarse correctamente  1`] = `
+<Fragment>
+  <h1>
+    Custom Hooks!!!
+  </h1>
+  <hr />
+  <div
+    className="alert alert-info text-center"
+  >
+     loading...
+  </div>
+</Fragment>
+`;
