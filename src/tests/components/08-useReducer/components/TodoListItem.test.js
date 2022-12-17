@@ -40,4 +40,21 @@ describe('test em el componente <TodoListItem />', () => {
 
         expect(wrapper.find('p').text()).toBe(`1. ${demoTodo[0].desc}`)
     });
+
+    test('debe de tener la clase complete', () => {
+
+        const todo = demoTodo[0];
+        todo.done = true;
+
+        const wrapper = shallow(<TodoListItem 
+            todo={todo}
+            i={0}
+            handleToggle={handleToggle}
+            handleDelete={handleDelete}
+            />)
+
+        const estilo = wrapper.find('p');
+        const className = estilo.prop('className')
+        expect(className.includes('complete')).toBe(true)
+    });
 })
