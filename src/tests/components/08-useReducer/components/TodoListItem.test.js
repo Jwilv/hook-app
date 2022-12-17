@@ -53,5 +53,8 @@ describe('test em el componente <TodoListItem />', () => {
         const estilo = wrapper.find('p');
         const className = estilo.prop('className')
         expect(className.includes('complete')).toBe(true)
+
+        //alternativa
+        expect(wrapper.find('p').hasClass('complete')).toBe(true);
     });
 })
