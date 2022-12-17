@@ -6,9 +6,9 @@ import './efectsMultipleCustomHooks.css'
 
 export const MultipleCustomHooks = () => {
 
-    const {state,increment} = useCounter(1)
+    const {value,increment} = useCounter(1)
 
-    const { loading,data } = useFetch(`https://www.breakingbadapi.com/api/quotes/${state}`)
+    const { loading,data } = useFetch(`https://www.breakingbadapi.com/api/quotes/${value}`)
 
     const {author,quote} = !!data && data[0]
 
