@@ -25,14 +25,14 @@ describe('test em el componente <TodoListItem />', () => {
     test('debe de llamar la funcion handleDelete', () => {
         
         wrapper.find('button').simulate('click');
-        expect( handleDelete ).toHaveBeenCalledWith(1);
+        expect( handleDelete ).toHaveBeenCalledWith(demoTodo[0].id);
 
     });
 
     test('debe de llamar la funcion handleToggle', () => {
         
         wrapper.find('p').simulate('click');
-        expect( handleToggle ).toHaveBeenCalledWith(1);
+        expect( handleToggle ).toHaveBeenCalledWith(demoTodo[0].id);
 
     });
 
