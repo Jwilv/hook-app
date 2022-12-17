@@ -48,9 +48,6 @@ describe('test em el componente <TodoListItem />', () => {
 
         const wrapper = shallow(<TodoListItem 
             todo={todo}
-            i={0}
-            handleToggle={handleToggle}
-            handleDelete={handleDelete}
             />)
 
         const estilo = wrapper.find('p');
