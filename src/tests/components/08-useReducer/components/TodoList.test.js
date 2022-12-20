@@ -19,7 +19,13 @@ describe('pruebas en el componente <TodoList />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('debe de tener 2 <TodoListItem /> ', () => {
-        
+    test('debe de renderizar todos los todo <TodoListItem /> ', () => {
+        expect(wrapper.find("TodoListItem").length).toBe(demoTodo.length)
+
+    });
+
+    test('se debe de enviar 2 funciones handleToggle /  handleDelete', () => {
+        expect(wrapper.find("TodoListItem").at(0).prop('handleToggle')).toEqual( expect.any(Function) )
+        expect(wrapper.find("TodoListItem").at(0).prop('handleDelete')).toEqual( expect.any(Function) )
     });
 })
