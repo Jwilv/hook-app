@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pruebas en <TodoAdd /> debe de mostrarse corectamente  1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    autoComplete="off"
+    className="form-control"
+    name="description"
+    onChange={[Function]}
+    placeholder="Incluir..."
+    type="text"
+    value=""
+  />
+  <button
+    className="btn btn-block btn-outline-primary mt-1 btn-block"
+    type="submit"
+  >
+    Agregar
+  </button>
+</form>
+`;
