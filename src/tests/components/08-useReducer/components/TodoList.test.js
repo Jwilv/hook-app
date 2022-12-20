@@ -20,6 +20,6 @@ describe('pruebas en el componente <TodoList />', () => {
     });
 
     test('debe de tener 2 <TodoListItem /> ', () => {
-        expect(wrapper).toMatchSnapshot();
+        
     });
 })
