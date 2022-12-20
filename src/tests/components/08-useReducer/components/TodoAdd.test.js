@@ -35,5 +35,15 @@ describe('pruebas en <TodoAdd />', () => {
         formSubmit( {preventDefault(){} } );
 
         expect( handleAddTodo ).toHaveBeenCalledTimes(1);
+        expect( handleAddTodo ).toHaveBeenCalledWith( expect.any(Object));
+        expect( handleAddTodo ).toHaveBeenCalledWith( {
+            id: expect.any(Number),
+            desc: value,
+            done: false,
+        });
+
+        //luego del submit se debe ejecutar el reset
+        expect( wrapper.find('input').prop('value')).toBe('')
     });
+    
  })
